@@ -18,7 +18,7 @@ export default class App extends Component {
     form.append("type", this.state.file.type)
     form.append("data", this.state.file)
 
-    fetch("http://127.0.0.1:500/file/add", {
+    fetch("http://127.0.0.1:5000/file/add", {
       method: "POST",
       body: form
     })
