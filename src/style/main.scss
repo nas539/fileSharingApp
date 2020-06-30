@@ -22,7 +22,43 @@ body {
 }
 
 .app {
-    margin-top: 2rem;
+    height: 100vh;
+    width: 100vw;
     display: grid;
+    grid-template-rows: 1fr 1fr;
     justify-items: center;
+
+    
+}
+.top {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border: 3px solid black;
+    background-color: olive;
+    align-items: center;
+    justify-items: center;
+
+    input {
+        font-size: 2em;
+    }
+}
+
+.bottom {
+    height: 100%;
+    width: 100%;
+    border: 3px solid black;
+    background-color: rebeccapurple;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    button {
+        height: 30%;
+        width: 30%;
+        border: 5px solid black;
+        border-radius: 5px;
+
+    }
 }

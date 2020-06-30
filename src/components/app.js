@@ -10,6 +10,19 @@ export default class App extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleDownload = this.handleDownload.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGetData = this.handleGetData.bind(this);
+  }
+
+  handleGetData() {
+    fetch("http://127.0.0.1:5000/file/get/1", { method: "GET" })
+    .then(response => response.blob())
+    .then(data => {
+      const file = new File([data], "Test.jpg", { type: "image/jpeg" })
+      this.setState({
+        file: file
+      })
+    })
+    .catch(error => console.log(error))
   }
 
   handleSubmit() {
@@ -47,9 +60,14 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
+        <div className="top">
         <input onChange={this.handleChange} type="file"/>
+        </div>
+        <div className="bottom">
+        <button onClick={this.handleGetData}>Get Data</button>
         <button onClick={this.handleSubmit}>Send</button>
         <button onClick={this.handleDownload}>Download</button>
+        </div>
       </div>
     );
   }
