@@ -1,73 +1,13 @@
 import React, { Component } from 'react';
+import FileShare from './pages/fileShare/fileShare'
 
 export default class App extends Component {
-  constructor() {
-    super();
-
-    this.state = {
-      file: {}
-    }
-    this.handleChange = this.handleChange.bind(this);
-    this.handleDownload = this.handleDownload.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleGetData = this.handleGetData.bind(this);
-  }
-
-  handleGetData() {
-    fetch("http://127.0.0.1:5000/file/get/1", { method: "GET" })
-    .then(response => response.blob())
-    .then(data => {
-      const file = new File([data], "Test.jpg", { type: "image/jpeg" })
-      this.setState({
-        file: file
-      })
-    })
-    .catch(error => console.log(error))
-  }
-
-  handleSubmit() {
-    const form = new FormData()
-    form.append("name", this.state.file.name)
-    form.append("type", this.state.file.type)
-    form.append("data", this.state.file)
-
-    fetch("http://127.0.0.1:5000/file/add", {
-      method: "POST",
-      body: form
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch( error => console.log(error))
-  }
-
-  handleDownload() {
-    const url = window.URL.createObjectURL(this.state.file);
-    const link = document.createElement("a");
-    link.download = this.state.file.name;
-    link.href = url;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    window.URL.revokeObjectURL(url);
-  }
-
-  handleChange(event) {
-    this.setState({
-      file: event.target.files[0]
-    });
-  }
+ 
 
   render() {
     return (
       <div className='app'>
-        <div className="top">
-        <input onChange={this.handleChange} type="file"/>
-        </div>
-        <div className="bottom">
-        <button onClick={this.handleGetData}>Get Data</button>
-        <button onClick={this.handleSubmit}>Send</button>
-        <button onClick={this.handleDownload}>Download</button>
-        </div>
+        <FileShare />
       </div>
     );
   }
