@@ -8,6 +8,19 @@ export default class SingleFile extends Component {
             file: {}
         }
         this.handleDownload = this.handleDownload.bind(this)
+        this.handleDelete = this.handleDelete.bind(this);
+    }
+
+    handleDelete() {
+        fetch(`http://127.0.0.1:5000/file/delete/${this.props.id}`, { method: "DELETE" })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            if (data === "FileDeleted") {
+                this.props.handleDelete(this.props.id)
+            }
+        })
+        .catch(error => console.log(error))
     }
 
     componentDidMount() {
@@ -39,6 +52,7 @@ export default class SingleFile extends Component {
                 <div className="single-file-wrapper">
                     <h3>{this.state.file.name}</h3>
                     <button className="btn" onClick={this.handleDownload}>Download</button>
+                    <button className="btn" onClick={this.handleDelete}>Delete</button>
                 </div>
             )
         } else {

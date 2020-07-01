@@ -12,6 +12,7 @@ html {
 }
 
 body {
+    background-color: lightblue;
     overflow-x: hidden;
     font-weight: normal;
 
@@ -22,13 +23,14 @@ body {
 }
 
 .app {
-    margin: 0px;
-    padding: 0px;
+    margin: 10px;
+    padding: 10px;
+    background-color: lightblue;
 }
 
 .file-share-wrapper {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-items: center;
@@ -36,35 +38,67 @@ body {
     
 }
 .top {
-    height: 100%;
-    width: 100%;
+    color: darkblue;
+    height: 80%;
+    width: 95%;
     display: flex;
     justify-content: center;
-    border: 3px solid transparent;
+    border: 15px solid white;
     background-color: olive;
     align-items: center;
     justify-items: center;
+    -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
 
     input {
-        font-size: 2em;
+        text-shadow: 2px 8px 9px #000000;
+        background-color: white;
+        font-size: 3em;
+        -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+
+        &:hover {
+            font-size: 3.1em;
+        }
+
+        &:active {
+            font-size: 3em;
+            -webkit-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+            box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+        }
     }
 }
 
 .bottom {
-    height: 100%;
-    width: 100%;
-    border: 1px solid transparent;
+    
+    color: white;
+    height: 80%;
+    width: 95%;
+    border: 15px solid white;
     background-color: rgb(161, 136, 187);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     justify-items: center;
+    -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
 
     .btn {
+        height: 30%;
+        width: 50%;
         font-size: 1em;
+
+        &:hover {
+            font-size: 1.2em;
+        }
     }
 
     button {
+        text-shadow: 2px 8px 9px #000000;
         outline: transparent;
         font-size: 3em;
         font-weight: 500;
@@ -73,11 +107,15 @@ body {
         border: 1px solid transparent;
         border-radius: 5px;
         -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
 
         &:hover {
-            outline: none;
+           font-size: 3.2em;
+        }
+
+        &:active {
+            font-size: 3em;
             -webkit-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
             -moz-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
             box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
