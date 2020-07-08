@@ -28,7 +28,7 @@ export default function signup(props) {
                         name="passwordConfirmInput" 
                         type="password" 
                         placeholder="Password Confirm" 
-                        value={props.passwordInput}
+                        value={props.passwordConfirmInput}
                         onChange={props.handleChange} 
                     />
                     <button type="submit">Signup</button>
