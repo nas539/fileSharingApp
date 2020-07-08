@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import SingleFile from './singleFile';
+import Auth from '../login/auth'
 
 export default class FileShare extends Component {
   constructor() {
@@ -74,6 +75,7 @@ export default class FileShare extends Component {
   render() {
     return (
       <div className='file-share-wrapper'>
+
         <div className="top">
           <input onChange={this.handleChange} type="file"/>
         </div>

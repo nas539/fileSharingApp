@@ -32,14 +32,14 @@ body {
     height: 100vh;
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     justify-items: center;
 
     
 }
 .top {
     color: darkblue;
-    height: 80%;
+    height: 50%;
     width: 95%;
     display: flex;
     justify-content: center;
@@ -75,7 +75,7 @@ body {
 .bottom {
     
     color: white;
-    height: 80%;
+    height: 50%;
     width: 95%;
     border: 15px solid white;
     background-color: rgb(161, 136, 187);
@@ -122,4 +122,63 @@ body {
         }
 
     }
+}
+
+.auth-wrapper {
+    color: white;
+    height: 50%;
+    width: 95%;
+    font-size: 2em;
+    border: 15px solid white;
+    background-color: rgb(161, 136, 187);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    
+    -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+        box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+
+        button {
+            text-shadow: 2px 8px 9px #000000;
+            outline: transparent;
+            font-weight: 500;
+            height: 30%;
+            width: 50%;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+            box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+    
+            
+            &:active {
+              
+                -webkit-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+                box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+            }
+        }
+
+        input {
+            text-shadow: 2px 8px 9px #000000;
+            outline: transparent;
+            font-weight: 500;
+            height: 30%;
+            width: 50%;
+            border: 1px solid transparent;
+            border-radius: 5px;
+            -webkit-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+            box-shadow: 46px 33px 58px 0px rgba(0,0,0,0.75);
+    
+    
+            &:active {
+                -webkit-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+                box-shadow: 3px 3px 17px 0px rgba(0,0,0,0.75);
+            }
+        
+        }
 }
